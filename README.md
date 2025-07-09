@@ -28,8 +28,7 @@ $authenticator = function($request, TokenAuthentication $tokenAuth){
     
     # If occured ok authentication continue to route
     # before end you can storage the user informations or whatever
-    ...
-    
+    return $request->withAttribute('auth_current_user', $auth->getUserByToken($token));    
 };
 
 $app = new App();
