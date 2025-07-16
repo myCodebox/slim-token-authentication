@@ -64,6 +64,7 @@ class TokenAuthentication
         try {
 
             if ($this->options['authenticator']($request, $this) === false) {
+                $this->setResponseMessage('Unauthorized');
                 return $this->error($request, $response);
             }
 
